@@ -19,8 +19,14 @@
   },
   "lint-staged": {
     "*.js": [
-      "standard"
+      "standard --fix",
+      "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "devDependencies": {
     "git-commit-msg-linter": "^2.4.2",
