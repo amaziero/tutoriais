@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "git-commit-msg-linter": "^2.4.2",
+    "husky": "^4.2.5",
     "lint-staged": "^10.2.6",
     "standart": "^14.3.1"
   }
