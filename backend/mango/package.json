@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "standart": "standard",
+    "standard::fix": "standard --fix"
   },
   "repository": "git+https://github.com/amaziero/tutoriais.git",
   "keywords": [],
@@ -17,20 +19,10 @@
   "dependencies": {
     "express": "^4.17.1"
   },
-  "lint-staged": {
-    "*.js": [
-      "standard --fix",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "devDependencies": {
     "git-commit-msg-linter": "^2.4.2",
     "husky": "^4.2.5",
+    "jest": "^26.0.1",
     "lint-staged": "^10.2.6",
     "standart": "^14.3.1"
   }
