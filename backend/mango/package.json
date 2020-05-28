@@ -1,26 +1,25 @@
 {
-  "name": "backend-studies",
+  "name": "mango",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amaziero/backend-studies.git"
-  },
+  "repository": "git+https://github.com/amaziero/tutoriais.git",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/amaziero/backend-studies/issues"
+    "url": "https://github.com/amaziero/tutoriais/issues"
   },
-  "homepage": "https://github.com/amaziero/backend-studies#readme",
+  "homepage": "https://github.com/amaziero/tutoriais#readme",
   "dependencies": {
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "git-commit-msg-linter": "^2.4.2"
+    "git-commit-msg-linter": "^2.4.2",
+    "lint-staged": "^10.2.6",
+    "standart": "^14.3.1"
   }
 }
