@@ -5,11 +5,12 @@ defmodule Faturas do
 @doc """
   Ao receber `fatura`, retorna um array de fatura
     ## Exexmplos
-    iex> Faturas.criar_faturas(["Telefone", "Agua", "Luz"])
+    iex> Faturas.criar_faturas(["Telefone", "Agua", "Luz"], [5, 10])
+    [["Telefone", "Agua", "Luz"], ["Telefone", "Agua", "Luz"]]
 """
-  def criar_faturas(faturas, _vencimentos) do
-    for fatura <- faturas do
-      fatura
+  def criar_faturas(faturas, vencimentos) do
+    for vencimento <- vencimentos, fatura <- faturas do
+      "Fatura: #{fatura}, com vencimento: #{vencimento}"
     end
   end
 
