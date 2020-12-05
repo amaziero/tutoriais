@@ -25,7 +25,7 @@ defmodule Faturas do
   """
 
   def faturas_a_pagar(faturas, quantidade) do
-    {a_pagar, restante_das_contas} = Enum.split(faturas, quantidade)
+    {a_pagar, _restante_das_contas} = Enum.split(faturas, quantidade)
     a_pagar
   end
 
@@ -51,6 +51,11 @@ defmodule Faturas do
     Enum.member?(faturas, fatura)
   end
 
+  def pagar_faturas(faturas, vencimento, quantidade) do
+    criar_faturas(faturas, vencimento)
+    |> ordenar_fatura
+    |> faturas_a_pagar(quantidade)
+  end
 
   @doc """
     
@@ -58,5 +63,15 @@ defmodule Faturas do
   def save(n_arquivo, faturas) do
     binario = :erlang.term_to_binary(faturas)
     File.write(n_arquivo, binario)
+  end
+
+  @doc """
+    
+  """
+  def load(nome_arquivo) do
+    case File.read(nome_arquivo) do
+      { :ok, binario } -> :erlang.binary_to_term binario
+      { :error, _status } -> "Não foi possível abrir o arquivo especificado"
+    end
   end
 end
